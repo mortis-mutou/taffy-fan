@@ -1,0 +1,272 @@
+
+/* 🎀 永雏塔菲粉丝社区 - 粉色可爱主题全局样式 🎀 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, 
+        #fff0f5 0%,
+        #ffe0f0 15%,
+        #ffd9e6 30%,
+        #ffcce0 50%,
+        #ffd9e6 70%,
+        #ffe0f0 85%,
+        #fff0f5 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #4a2c3a;
+}
+
+/* 🎀 飘落花瓣动画 */
+@keyframes falling {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.petals-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    top: -10%;
+    font-size: 18px;
+    animation: falling linear infinite;
+    opacity: 0.25;
+}
+
+/* 可爱小圆点装饰 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image:
+        radial-gradient(#ffb6c1 2px, transparent 2px),
+        radial-gradient(#ffc0cb 1px, transparent 1px);
+    background-size: 60px 60px, 30px 30px;
+    background-position: 0 0, 30px 30px;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+/* 小心心装饰 */
+body::after {
+    content: '❤️ 💕 🎀 💖 ✨';
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#root {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+}
+
+
+
+
+/* 📌 导航栏菜单样式覆盖 */
+.ant-menu-horizontal {
+    border-bottom: none !important;
+}
+
+
+
+
+.ant-menu-horizontal > .ant-menu-item {
+    color: rgba(255,255,255,0.85) !important;
+    border-radius: 20px !important;
+    margin: 0 4px !important;
+    padding: 0 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+
+
+
+.ant-menu-horizontal > .ant-menu-item:hover {
+    color: #ffffff !important;
+    background: rgba(255,255,255,0.2) !important;
+}
+
+
+
+.ant-menu-horizontal > .ant-menu-item-selected {
+    color: #ffffff !important;
+    background: rgba(255,255,255,0.25) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ant-menu-horizontal > .ant-menu-item::after {
+    display: none !important;
+}
+
+/* 📌 卡片样式覆盖 - 粉色主题 */
+.ant-card {
+    border: 1px solid #ffe4ec !important;
+    border-radius: 16px !important;
+    box-shadow: 0 2px 12px rgba(255,105,180,0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+.ant-card:hover {
+    box-shadow: 0 4px 20px rgba(255,105,180,0.15) !important;
+    transform: translateY(-2px);
+}
+
+/* 📌 按钮样式覆盖 */
+.ant-btn-primary {
+    background: linear-gradient(135deg, #ff69b4, #ff1493) !important;
+    border: none !important;
+    border-radius: 20px !important;
+    box-shadow: 0 2px 8px rgba(255,105,180,0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.ant-btn-primary:hover {
+    background: linear-gradient(135deg, #ff85c0, #ff69b4) !important;
+    box-shadow: 0 4px 16px rgba(255,105,180,0.4) !important;
+    transform: translateY(-1px);
+}
+
+/* 📌 输入框样式 */
+.ant-input, .ant-input-affix-wrapper {
+    border-color: #ffe4ec !important;
+    border-radius: 12px !important;
+}
+
+.ant-input:hover, .ant-input-affix-wrapper:hover {
+    border-color: #ff69b4 !important;
+}
+
+.ant-input:focus, .ant-input-affix-wrapper-focused {
+    border-color: #ff69b4 !important;
+    box-shadow: 0 0 0 2px rgba(255,105,180,0.1) !important;
+}
+
+/* 📌 标签样式 */
+.ant-tag {
+    border-radius: 10px;
+}
+
+/* 📌 表格样式 */
+.ant-table {
+    border-radius: 12px;
+}
+
+/* 🎀 动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+/* 📌 自定义滚动条 - 粉色 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffe4ec;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ff69b4, #ff1493);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff1493;
+}
+
+/* 📌 悬浮心形特效类（用于JS动态添加） */
+.heart-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    font-size: 20px;
+    animation: heartParticle 1s ease-out forwards;
+}
+
+@keyframes heartParticle {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0) rotate(360deg);
+    }
+}
